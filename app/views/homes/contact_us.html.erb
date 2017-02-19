@@ -5,25 +5,31 @@
 
 <body style="background-color: #09C4BB">
 
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #e3f2fd;">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to "<div class='home-link' style='font-family: 'Shrikhand'; cursive;'><b>Lyti</b></div>".html_safe, "/homes" , class:"navbar-brand" %>
+    <a class="navbar-brand" href="/">
+      <img src="http://www.thedesignlove.com/wp-content/uploads/2017/01/037-Seafood-Chef-Logo-Template.jpg" width="30" height="30" alt="">
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item active">
-        <%= link_to 'Menu', new_article_path, class:"bg-primary" ,class:"btn btn-primary" %>
+        <%= link_to 'Home', "/", class:"nav-link" %>
+        </li>
+
+        <li class="nav-item active">
+        <%= link_to 'Menu', "/menus?section=Breakfast", class:"nav-link" %>
+        </li>
+
+        <li class="nav-item active">
+        <%= link_to 'Contact Us'.html_safe, "/contact-us", class:"nav-link" %>
         </li>
 
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <%= render "search_filters", search: @articles, class:"form-control mr-sm-2" %>
-      </form>
     </div>
-
   </nav>
 
   <div style="color:white">
