@@ -1,0 +1,57 @@
+<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<body style="background-color: #09C4BB">
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <%= link_to "<div class='home-link' style='font-family: 'Shrikhand'; cursive;'><b>Lyti</b></div>".html_safe, "/homes" , class:"navbar-brand" %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+        <%= link_to 'Menu', new_article_path, class:"bg-primary" ,class:"btn btn-primary" %>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <%= render "search_filters", search: @articles, class:"form-control mr-sm-2" %>
+      </form>
+    </div>
+
+  </nav>
+
+  <div style="color:white">
+      <p class="text-center" style="font-family: 'Lora', cursive; font-size: 70px; color:white;" ><b> Contact Us </b></p>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><i class="glyphicon glyphicon-home" ></i> Xuan Dieu, Quy Nhon city, Binh Dinh province, VietNam </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"> <i class="glyphicon glyphicon-envelope" ></i> contact@lyti.com </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><i class="glyphicon glyphicon-earphone" ></i> 0986995459 </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><i class="glyphicon glyphicon-thumbs-up" ></i> https://facebook.com/lyti </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3922.400288580428!2d109.24179841932613!3d13.772306631701738!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9a3f40efc7259557!2sSurf+Bar!5e0!3m2!1sen!2s!4v1487436616474" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> </div>
+        <div class="col"></div>
+      </div>
+  </div>
+</body>
