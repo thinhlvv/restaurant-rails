@@ -1,3 +1,7 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #e3f2fd;">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,6 +22,12 @@
       </li>
 
     </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
   </div>
 </nav>
 
@@ -28,9 +38,9 @@
   <ul style="text-align:center;" class="nav nav-tabs">
 
     <% @sections.each do |section| %>
-    <div class="nav-item nav-link <%= 'active' if params[:section] == section.name %>" >
-      <%= link_to section.name, "/menus?section="+section.name %>
-    </div>
+      <div class="nav-item nav-link <%= 'active' if params[:section] == section.name %>" >
+        <%= link_to section.name, "/menus?section="+section.name %>
+      </div>
     <% end %>
 
   </ul>
@@ -38,20 +48,20 @@
   <table class="table" style="margin-top:10px;">
     <thead>
       <tr>
-        <th scope="row">#</th>
-        <th>Name</th>
+        <th>#</th>
+        <th style="width:20%">Name <i class='glyphicon glyphicon-resize-vertical'></i></th>
         <th>Description</th>
-        <th>Price</th>
+        <th style="width:10%">Price <i class='glyphicon glyphicon-resize-vertical'></i></th>
         <th>Image</th>
       </tr>
     </thead>
     <tbody>
       <% @items.each_with_index do |item, index| %>
       <tr>
-        <th scope="row"><%= index + 1 %></th>
-          <td><%= item.name %></td>
+        <th><%= index + 1 %></th>
+          <td style="width:20%"><%= item.name %></td>
           <td><%= item.description %></td>
-          <td><%= item.price %> </td>
+          <td style="width:10%"><%= item.price %> </td>
           <td><img src="<%= item.image_url %>" style="with:100px; height: 100px;"></img></td>
       </tr>
       <% end %>
