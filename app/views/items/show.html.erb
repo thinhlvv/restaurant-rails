@@ -1,5 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #e3f2fd;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand" href="/">
+      <img src="http://www.thedesignlove.com/wp-content/uploads/2017/01/037-Seafood-Chef-Logo-Template.jpg" width="30" height="30" alt="">
+    </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item active">
+      <%= link_to 'Home', "/", class:"nav-link" %>
+      </li>
+
+      <li class="nav-item active">
+      <%= link_to 'Menu', menus_path, class:"nav-link" %>
+      </li>
+
+      <li class="nav-item active">
+      <%= link_to 'Contact Us', "/contact-us", class:"nav-link" %>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
 <div class="container">
   <h1 class="text-center"> <%= @item.name%> </h1>
   <p class="text-center"> <%= @item.description%> </p>
