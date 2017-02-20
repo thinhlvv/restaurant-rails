@@ -20,7 +20,7 @@ $(document).ready( function () {
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-      <%= link_to 'Home', "/", class:"nav-link" %>
+      <%= link_to 'Home', homes_path, class:"nav-link" %>
       </li>
 
       <li class="nav-item active">
@@ -40,7 +40,7 @@ $(document).ready( function () {
 
     <% @sections.each do |section| %>
       <div class="nav-item nav-link <%= 'active' if params[:section] == section.name %>" >
-        <%= link_to section.name, "/menus?section="+section.name %>
+        <%= link_to section.name, controller: menus_path,section: section.name %>
       </div>
     <% end %>
 
@@ -54,6 +54,7 @@ $(document).ready( function () {
         <th>Description</th>
         <th style="width:10%">Price</th>
         <th>Image</th>
+        <th>Order</th>
       </tr>
     </thead>
     <tbody>
@@ -64,11 +65,10 @@ $(document).ready( function () {
           <td><%= item.description %></td>
           <td style="width:10%"><%= item.price %> </td>
           <td><img src="<%= item.image_url %>" style="with:100px; height: 100px;"></img></td>
+          <td> <%= link_to 'order', new_order_path(item_id: item.id) %> </td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
 </div>
-
-map.check_teachers, '/school/check_teachers/:id' :controller => :school, :action => :check_teachers

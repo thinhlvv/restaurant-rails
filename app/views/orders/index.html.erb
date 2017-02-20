@@ -1,0 +1,61 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #e3f2fd;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand" href="/">
+      <img src="http://www.thedesignlove.com/wp-content/uploads/2017/01/037-Seafood-Chef-Logo-Template.jpg" width="30" height="30" alt="">
+    </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item active">
+      <%= link_to 'Home', homes_path, class:"nav-link" %>
+      </li>
+
+      <li class="nav-item active">
+      <%= link_to 'Menu', menus_path, class:"nav-link" %>
+      </li>
+
+      <li class="nav-item active">
+      <%= link_to 'Contact Us', "/contact-us", class:"nav-link" %>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<div class="container">
+  <h1> Order List </h1>
+
+  <table class="table" style="margin-top:10px;">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th style="width:20%">Name</th>
+        <th> Food </th>
+        <th> Quantity </th>
+        <th>Address</th>
+        <th style="width:10%">Phone</th>
+        <th>Created</th>
+        <th>Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each_with_index do |order, index| %>
+      <tr>
+        <th><%= index + 1 %></th>
+          <td style="width:20%"><%= order.customer_name %></td>
+          <td> <%= order.item.name %> </td>
+          <td> <%= order.quantity %>
+          <td><%= order.customer_address %></td>
+          <td style="width:10%"><%= order.customer_phone %> </td>
+          <td> <%= "#{order.created_at.strftime("%A")}, #{order.created_at.strftime("%B")}, #{order.created_at.strftime("%Y")}, #{order.created_at.strftime("%H")}:#{order.created_at.strftime("%I")} #{order.created_at.strftime("%p")}" %> </td>
+          <td> <%= order.item.price * order.quantity + 20000 %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
