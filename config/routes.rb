@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/contact-us" => "homes#contact_us"
   resources :homes
   resources :menus
+  resources :items
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

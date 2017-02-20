@@ -1,5 +1,11 @@
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #e3f2fd;">
@@ -23,11 +29,6 @@
 
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
   </div>
 </nav>
 
@@ -45,13 +46,13 @@
 
   </ul>
 
-  <table class="table" style="margin-top:10px;">
+  <table id="myTable" class="display table" style="margin-top:10px;">
     <thead>
       <tr>
         <th>#</th>
-        <th style="width:20%">Name <i class='glyphicon glyphicon-resize-vertical'></i></th>
+        <th style="width:20%">Name</th>
         <th>Description</th>
-        <th style="width:10%">Price <i class='glyphicon glyphicon-resize-vertical'></i></th>
+        <th style="width:10%">Price</th>
         <th>Image</th>
       </tr>
     </thead>
@@ -59,7 +60,7 @@
       <% @items.each_with_index do |item, index| %>
       <tr>
         <th><%= index + 1 %></th>
-          <td style="width:20%"><%= item.name %></td>
+          <td style="width:20%"><%= link_to item.name, item_path(item) %></td>
           <td><%= item.description %></td>
           <td style="width:10%"><%= item.price %> </td>
           <td><img src="<%= item.image_url %>" style="with:100px; height: 100px;"></img></td>
@@ -69,3 +70,5 @@
   </table>
 
 </div>
+
+map.check_teachers, '/school/check_teachers/:id' :controller => :school, :action => :check_teachers
