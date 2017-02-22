@@ -58,7 +58,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](coderschool-restaurant.gif)
 
 GIF created with [LiceCap](coderschool-restaurant.gif).
 
